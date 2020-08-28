@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 check [``tag_restriction.ini``](tag_restriction.ini) for details on their prerequisites
 
-2. You should have Docker or a CKAN instance installed before using this extension
+2. You should have Docker before using this docker image
 
 ### Installing
 
