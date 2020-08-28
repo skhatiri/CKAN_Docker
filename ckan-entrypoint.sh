@@ -52,7 +52,7 @@ if [ ! -e "$CONFIG" ]; then
   
   #add our plugin
   echo "adding tag_restriction plugin to config file"
-  sed -i '/^ckan.plugins/ s/$/ tag_restriction/' "$CONFIG"
+  sed -i '/^ckan.plugins/ s/$/ tag_restriction doi_field_extension /' "$CONFIG"
 
   #adding configurations from tag_restriction.ini
   echo "adding tag_restriction configurations to config file"

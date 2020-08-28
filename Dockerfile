@@ -13,9 +13,14 @@ CMD ["ckan","-c","etc/ckan/production.ini", "run", "--host", "0.0.0.0"]
 #adding extension files to container
 
 RUN git clone -b master https://github.com/skhatiri/CKAN_tag_extension.git  $CKAN_VENV/src/ckanext-tag_restriction/
-#COPY . $CKAN_VENV/src/ckanext-tag_restriction/
 #seting up the extension
 RUN . $CKAN_VENV/bin/activate \
 	&& cd $CKAN_VENV/src/ckanext-tag_restriction/ \
+	&& python setup.py develop
+
+RUN git clone -b master https://github.com/skhatiri/CKAN_DOI_field_extension.git  $CKAN_VENV/src/ckanext-DOI_field_extension/
+#seting up the extension
+RUN . $CKAN_VENV/bin/activate \
+	&& cd $CKAN_VENV/src/ckanext-DOI_field_extension/ \
 	&& python setup.py develop
 
