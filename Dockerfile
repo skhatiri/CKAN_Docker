@@ -8,6 +8,7 @@ FROM ckan/ckan
 USER root
 RUN ln -s $CKAN_VENV/bin/ckan /usr/local/bin/ckan
 COPY ckan-entrypoint.sh /
+RUN chmod +x /ckan-entrypoint.sh
 CMD ["ckan","-c","etc/ckan/production.ini", "run", "--host", "0.0.0.0"]
 
 #adding extension files to container
